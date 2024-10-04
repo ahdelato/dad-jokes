@@ -1,0 +1,26 @@
+.header {
+    background: #40787d;
+    height: 60px;
+    width: 100%;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    margin-right: 15px;
+    width: 40%;
+    background: #e0e2ec;
+    --mdc-outlined-text-field-container-shape: 28px;
+    border-radius: 28px;
+}
+
