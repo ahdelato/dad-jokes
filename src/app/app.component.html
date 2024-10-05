@@ -1,17 +1,16 @@
 <div class="topbars">
     <app-header></app-header>
     <nav class="nav-bar" mat-tab-nav-bar [tabPanel]="tabPanel">
-        <a mat-tab-link (click)="activeTab = 'All Jokes'" [active]="activeTab == 'All Jokes'"> All Jokes</a>
-        <a mat-tab-link (click)="activeTab = 'Random Joke'" [active]="activeTab == 'Random Joke'"> Random Joke</a>
+        <a mat-tab-link routerLink="/" (click)="activeTab = 'All Jokes'" [active]="activeTab == 'All Jokes'"> All Jokes</a>
+        <a mat-tab-link routerLink="/random" (click)="activeTab = 'Random Joke'" [active]="activeTab == 'Random Joke'"> Random Joke</a>
         <a mat-tab-link (click)="activeTab = 'Top Jokes'" [active]="activeTab == 'Top Jokes'"> Top Jokes</a>
         <a mat-tab-link (click)="activeTab = 'Saved Jokes'" [active]="activeTab == 'Saved Jokes'"> Saved Jokes</a>
     </nav>
 </div>
 
-<mat-tab-nav-panel #tabPanel>
+<mat-tab-nav-panel #tabPanel >
     <router-outlet />
 </mat-tab-nav-panel>
-<div class="space">asdsa</div>
 <app-footer></app-footer>
 
 
