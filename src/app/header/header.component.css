@@ -1,11 +1,7 @@
 .header {
     background: #40787d;
-    height: 60px;
+    height: 80px;
     width: 100%;
-}
-
-.fixed {
-    position: fixed;
 }
 
 .container {
@@ -18,9 +14,26 @@
 
 .search-bar {
     margin-right: 15px;
-    width: 40%;
+    width: 35%;
     background: #e0e2ec;
     --mdc-outlined-text-field-container-shape: 28px;
     border-radius: 28px;
+}
+
+.logo {
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.title {
+    color: #e0e2ec;
+    font-size: xx-large;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 

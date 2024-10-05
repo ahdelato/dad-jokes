@@ -1,0 +1,34 @@
+.footer {
+    height: 200px;
+    background-color: rgb(230, 230, 230);
+}
+
+.footer-flex {
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.logo-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info p{
+    font-size: small;
+}
+
+

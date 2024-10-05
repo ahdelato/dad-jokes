@@ -1,0 +1,13 @@
+.topbars {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.6);
+}
+
+.space {
+    margin-top: 1000px;
+}
+
+.nav-bar {
+    background: #e0e2ec;
+}
