@@ -1,0 +1,18 @@
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.button-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.joke-button {
+    margin-top: 20px;
+    height: 100px;
+    width: 80%;
+}
+

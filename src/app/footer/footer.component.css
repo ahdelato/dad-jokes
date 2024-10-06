@@ -1,8 +1,6 @@
 .footer {
-    height: 200px;
+    height: 150px;
     background-color: rgb(230, 230, 230);
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
