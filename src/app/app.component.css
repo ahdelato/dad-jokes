@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     background: #40787d;
-    min-height: calc(100% - 278.8px);
+    min-height: calc(100vh - 278.8px);
 }
 
 .main-content {

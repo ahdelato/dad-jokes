@@ -1,25 +1,25 @@
 <div class="container">
     <div class="topbars">
-    <app-header></app-header>
-    <nav class="nav-bar" mat-tab-nav-bar [tabPanel]="tabPanel">
-        <a mat-tab-link routerLink="/" (click)="activeTab = 'All Jokes'" [active]="activeTab == 'All Jokes'"> All Jokes</a>
-        <a mat-tab-link routerLink="/random" (click)="activeTab = 'Random Joke'" [active]="activeTab == 'Random Joke'"> Random Joke</a>
-        <a mat-tab-link (click)="activeTab = 'Top Jokes'" [active]="activeTab == 'Top Jokes'"> Top Jokes</a>
-        <a mat-tab-link (click)="activeTab = 'Saved Jokes'" [active]="activeTab == 'Saved Jokes'"> Saved Jokes</a>
-    </nav>
-</div>
-
-<main class="main">
-    <div class="main-content">
-        <mat-tab-nav-panel #tabPanel >
-        <router-outlet />
-        </mat-tab-nav-panel>
+        <app-header></app-header>
+        <nav class="nav-bar" mat-tab-nav-bar [tabPanel]="tabPanel">
+            <a mat-tab-link routerLink="/" (click)="activeTab = 'All Jokes'" [active]="activeTab == 'All Jokes'"> All Jokes</a>
+            <a mat-tab-link routerLink="/random" (click)="activeTab = 'Random Joke'" [active]="activeTab == 'Random Joke'"> Random Joke</a>
+            <a mat-tab-link (click)="activeTab = 'Top Jokes'" [active]="activeTab == 'Top Jokes'"> Top Jokes</a>
+            <a mat-tab-link (click)="activeTab = 'Saved Jokes'" [active]="activeTab == 'Saved Jokes'"> Saved Jokes</a>
+        </nav>
     </div>
-</main>
 
-<div class="footer">
-    <app-footer></app-footer>
-</div>
+    <main class="main">
+        <div class="main-content">
+            <mat-tab-nav-panel #tabPanel >
+                <router-outlet />
+            </mat-tab-nav-panel>
+        </div>
+    </main>
+
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>
 </div>
 
     

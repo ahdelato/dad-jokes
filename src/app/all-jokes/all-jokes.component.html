@@ -1,8 +1,15 @@
+<mat-paginator class="paginator" [pageSize]="10" [length]="numJokes" [hidePageSize]="true" [pageIndex]="page - 1" (page)="handlePageEvent($event)">
+
+</mat-paginator>
+
 <div class="container">
     <app-joke-item *ngFor="let joke of jokes" [joke]="joke" class="width">
     
     </app-joke-item>
 </div>
+<mat-paginator class="paginator" [pageSize]="10" [length]="numJokes" [hidePageSize]="true" [pageIndex]="page - 1" (page)="handlePageEvent($event)">
+
+</mat-paginator>
 
 
 

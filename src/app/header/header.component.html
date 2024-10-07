@@ -6,8 +6,8 @@
         </div>
         <!-- Search bar-->
          <mat-form-field appearance="outline" subscriptSizing="dynamic" class="search-bar">
-            <input matInput type="text" placeholder="Search Jokes">
-            <button matSuffix mat-icon-button aria-label="Search">
+            <input matInput type="text" placeholder="Search Jokes" (keyup.enter)="searchJoke()" [(ngModel)] = "searchVal">
+            <button matSuffix mat-icon-button aria-label="Search" (click)="searchJoke()">
                 <mat-icon>search</mat-icon>
             </button>
          </mat-form-field>

@@ -11,6 +11,11 @@ export const routes: Routes = [
     {
         path: "random",
         component: RandomJokeComponent
+    },
+
+    {
+        path: "search",
+        component: AllJokesComponent
     }
 
 ];
