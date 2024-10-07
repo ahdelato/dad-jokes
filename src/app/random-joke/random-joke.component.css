@@ -1,4 +1,21 @@
 .container {
-    display: block;
-    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.dad-img {
+    width: 60%;
+    height: 300px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.joke-container {
+    margin-bottom: 50px;
+}
+
+.width {
+    width: 100%;
 }

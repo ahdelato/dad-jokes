@@ -1,4 +1,14 @@
 <div class="container">
-    <p>random-joke works!</p>
+    <img class="dad-img" src="/dad{{dadNum}}.jpg" alt="Dad Picture">
+    <div *ngIf="joke != undefined" class="width joke-container">
+        <app-joke-item  [joke]="joke" class="width">
+    
+        </app-joke-item>
+    </div>
+    
+    <button mat-fab extended (click)="generatingJoke()">
+        Generate Joke
+    </button>
 </div>
+    
 
