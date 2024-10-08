@@ -19,6 +19,6 @@ export class ApiService {
   }
 
   putData(url: string){
-    this.httpClient.put(url, null);
+    return this.httpClient.put(url, null);
   }
 }
