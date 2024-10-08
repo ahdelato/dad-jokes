@@ -2,10 +2,10 @@
     <div class="topbars">
         <app-header></app-header>
         <nav class="nav-bar" mat-tab-nav-bar [tabPanel]="tabPanel">
-            <a mat-tab-link routerLink="/" (click)="activeTab = 'All Jokes'" [active]="activeTab == 'All Jokes'"> All Jokes</a>
-            <a mat-tab-link routerLink="/random" (click)="activeTab = 'Random Joke'" [active]="activeTab == 'Random Joke'"> Random Joke</a>
-            <a mat-tab-link (click)="activeTab = 'Top Jokes'" [active]="activeTab == 'Top Jokes'"> Top Jokes</a>
-            <a mat-tab-link (click)="activeTab = 'Saved Jokes'" [active]="activeTab == 'Saved Jokes'"> Saved Jokes</a>
+            <a mat-tab-link routerLink="/" (click)="activeTab = 1" [active]="activeTab == 1"> All Jokes</a>
+            <a mat-tab-link routerLink="/random" (click)="activeTab = 2" [active]="activeTab == 2"> Random Joke</a>
+            <a mat-tab-link (click)="activeTab = 3" [active]="activeTab == 3"> Top Jokes</a>
+            <a mat-tab-link routerLink="/saved" (click)="activeTab = 4" [active]="activeTab == 4"> Saved Jokes</a>
         </nav>
     </div>
 

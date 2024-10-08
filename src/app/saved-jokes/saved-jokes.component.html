@@ -1,0 +1,14 @@
+<mat-paginator class="paginator" [pageSize]="10" [length]="ids.length" [hidePageSize]="true" [pageIndex]="page - 1" (page)="handlePageEvent($event)">
+
+</mat-paginator>
+
+<div class="container">
+    <app-joke-item *ngFor="let id of ids.slice((page - 1) * 10, page * 10)" [id]="id" class="width">
+    
+    </app-joke-item>
+</div>
+<mat-paginator class="paginator" [pageSize]="10" [length]="ids.length" [hidePageSize]="true" [pageIndex]="page - 1" (page)="handlePageEvent($event)">
+
+</mat-paginator>
+
+

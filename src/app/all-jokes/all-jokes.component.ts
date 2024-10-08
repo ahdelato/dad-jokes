@@ -32,7 +32,7 @@ export class AllJokesComponent {
   }
 
   ngOnInit(){
-    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {   // Doesn't reuse search route when executing multiple searches in a row
       return false;
     };
 

@@ -1,0 +1,24 @@
+<div class="center">
+    <img class="dad-img" src="dad{{dadNum}}.jpg" alt="Dad Picture">
+    <div *ngIf="joke != undefined" class="center width">
+        <div  class="joke-container">
+            <div class="button-contents">
+                <div class="joke">
+                    {{joke.joke}}
+                </div>
+                <div class="bottom">
+                    <button mat-fab extended [ngClass]="likeStatus == 'Like' ? 'unselected' : 'likeSelected'" (click)="likeSelect()">
+                        <mat-icon>thumb_up</mat-icon>
+                        <div>{{likeStatus}}</div>
+                    </button>
+
+                    <button mat-fab extended [ngClass]="saveStatus == 'Save' ? 'unselected' : 'saveSelected'" (click)="saveSelect()">
+                        <mat-icon>bookmark</mat-icon>
+                        <div>{{saveStatus}}</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

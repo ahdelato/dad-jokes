@@ -1,0 +1,68 @@
+import { Component , Input} from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { ApiService } from '../services/api.service';
+import { Joke } from '../../types';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-joke-page',
+  standalone: true,
+  imports: [MatButtonModule, CommonModule, MatIcon],
+  templateUrl: './joke-page.component.html',
+  styleUrl: './joke-page.component.css'
+})
+export class JokePageComponent {
+
+  dadNum: number = this.getRndInteger(1, 5);
+  joke?: Joke = undefined;
+
+  likeStatus: string = "Like";
+  saveStatus: string = "Save";
+
+  constructor(private apiService: ApiService, private route: ActivatedRoute){}
+
+  private getRndInteger(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+
+  ngOnInit(){
+    this.apiService.fetchData("https://icanhazdadjoke.com/j/" + this.route.snapshot.paramMap.get("id")).subscribe(
+      (resp:any) => {
+        this.joke = {id: resp.id, joke: resp.joke};
+        if (resp.status != 200){
+          this.joke = undefined;
+        }
+      }
+    )
+
+    let saveStorage = JSON.parse(localStorage.getItem("saves")!);  // Save button initialization
+    if (saveStorage.hasOwnProperty(this.route.snapshot.paramMap.get("id"))){
+      this.saveStatus = "Saved";
+    }
+  }
+
+  likeSelect(){
+    if (this.likeStatus == "Like"){
+      this.likeStatus = "Liked";
+    }
+    else{
+      this.likeStatus = "Like";
+    }
+  }
+
+  saveSelect(){
+    let saveStorage = JSON.parse(localStorage.getItem("saves")!); // Gather from localStorage again in case of data change
+    if (this.saveStatus == "Save"){
+      this.saveStatus = "Saved";
+      saveStorage[this.route.snapshot.paramMap.get("id")!] = true;
+    }
+    else{
+      this.saveStatus = "Save";
+      delete saveStorage[this.route.snapshot.paramMap.get("id")!];
+    }
+    localStorage.setItem("saves", JSON.stringify(saveStorage));
+  }
+
+}

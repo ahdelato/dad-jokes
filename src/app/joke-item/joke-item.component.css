@@ -3,16 +3,26 @@
     justify-content: center;
 }
 
+::ng-deep.mdc-button__label {
+    width: 100%;
+}
+
 .button-contents {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 90px;
+    width: 100%;
 }
 
 .joke-button {
     margin-top: 20px;
     height: 100px;
     width: 80%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
 }
 
