@@ -35,6 +35,9 @@ export class AppComponent {
     if (this.router.url.includes("random")){
       this.activeTab = 2;
     }
+    else if (this.router.url.includes("top")){
+      this.activeTab = 3;
+    }
     else if (this.router.url.includes("saved")){
       this.activeTab = 4;
     }

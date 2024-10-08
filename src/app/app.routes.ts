@@ -3,6 +3,7 @@ import { AllJokesComponent } from './all-jokes/all-jokes.component';
 import { RandomJokeComponent } from './random-joke/random-joke.component';
 import { JokePageComponent } from './joke-page/joke-page.component';
 import { SavedJokesComponent } from './saved-jokes/saved-jokes.component';
+import { TopJokesComponent } from './top-jokes/top-jokes.component';
 
 export const routes: Routes = [
     {
@@ -28,6 +29,11 @@ export const routes: Routes = [
     {
         path: "saved",
         component: SavedJokesComponent
+    },
+
+    {
+        path: "top",
+        component: TopJokesComponent
     }
 
 ];
