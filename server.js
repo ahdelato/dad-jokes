@@ -5,7 +5,11 @@ const port = 4000;
 
 jokeLikes = {};
 
-app.get("/api/likes/:jokeId", (req, res) => {
+let corsOptions = {
+    origin: [ 'http://localhost:4200', 'http://localhost:3000' ]
+};
+
+app.get("/api/likes/:jokeId", cors(corsOptions), (req, res) => {
     if (jokeLikes.hasOwnProperty(req.params.jokeId)){
         res.json({numLikes: jokeLikes[req.params.jokeId]})
     }
@@ -15,11 +19,11 @@ app.get("/api/likes/:jokeId", (req, res) => {
     }
 });
 
-app.get("/api/topJokes", (req, res) => {
+app.get("/api/topJokes", cors(corsOptions), (req, res) => {
     res.json({topJokes: Object.keys(jokeLikes).sort((a, b) => jokeLikes[b] - jokeLikes[a]).slice(0, 10)})
 });
 
-app.post("/api/addLike/:jokeId", (req, res) => {
+app.put("/api/addLike/:jokeId", cors(corsOptions), (req, res) => {
     if (jokeLikes.hasOwnProperty(req.params.jokeId)){
         jokeLikes[req.params.jokeId]++;
     }
@@ -29,7 +33,7 @@ app.post("/api/addLike/:jokeId", (req, res) => {
     }
 })
 
-app.post("/api/removeLike/:jokeId", (req, res) => {
+app.put("/api/removeLike/:jokeId", cors(corsOptions), (req, res) => {
     if (jokeLikes[req.params.jokeId]-- == 0){
         delete jokeLikes.req.params.jokeId;
     }  

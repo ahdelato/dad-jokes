@@ -53,12 +53,12 @@ export class JokePageComponent {
     if (this.likeStatus == "Like"){
       this.likeStatus = "Liked";
       likeStorage[this.route.snapshot.paramMap.get("id")!] = true;
-      this.apiService.postData("http://54.176.31.97:4000/api/addLike/" + this.route.snapshot.paramMap.get("id")); // Increment likes in server
+      this.apiService.putData("http://54.176.31.97:4000/api/addLike/" + this.route.snapshot.paramMap.get("id")); // Increment likes in server
     }
     else{
       this.likeStatus = "Like";
       delete likeStorage[this.route.snapshot.paramMap.get("id")!];
-      this.apiService.postData("http://54.176.31.97:4000/api/removeLike/" + this.route.snapshot.paramMap.get("id")); // Decrement likes in server
+      this.apiService.putData("http://54.176.31.97:4000/api/removeLike/" + this.route.snapshot.paramMap.get("id")); // Decrement likes in server
     }
     localStorage.setItem("likes", JSON.stringify(likeStorage));
   }

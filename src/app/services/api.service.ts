@@ -18,7 +18,7 @@ export class ApiService {
     return this.httpClient.get(url);
   }
 
-  postData(url: string){
-    this.httpClient.post(url, null);
+  putData(url: string){
+    this.httpClient.put(url, null);
   }
 }
