@@ -34,4 +34,6 @@ app.post("/api/removeLike/:jokeId", (req, res) => {
     }  
 })
 
-app.listen(port);
+app.listen(port, () => {
+    console.log("Server listening on port " + port);
+});
