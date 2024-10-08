@@ -13,4 +13,12 @@ export class ApiService {
     const headers = new HttpHeaders({"Accept": "application/json"});
     return this.httpClient.get(url, {headers, params});
   }
+
+  getData(url: string){ // for server.js (doesnt use headers)
+    return this.httpClient.get(url);
+  }
+
+  postData(url: string){
+    this.httpClient.post(url, null);
+  }
 }

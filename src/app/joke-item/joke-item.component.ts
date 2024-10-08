@@ -17,7 +17,8 @@ export class JokeItemComponent {
   @Input() joke: Joke = {id: "", joke: ""};
   @Input() id? : string = undefined;
   saveIcon: string = "bookmark_border";
-  likeIcon: string = "thumb_up_off_alt"
+  likeIcon: string = "thumb_up_off_alt";
+  numLikes: number = 0;
 
   constructor(private apiService: ApiService){}
 
@@ -38,6 +39,11 @@ export class JokeItemComponent {
   }
 
   private setLike(){
+    this.apiService.getData("http://54.176.31.97:4000/api/likes/" + this.joke.id).subscribe(
+      (resp:any)=> {
+        this.numLikes = resp.numLikes;
+      }
+    )
     let likeStorage = JSON.parse(localStorage.getItem("likes")!);
     if (likeStorage.hasOwnProperty(this.joke.id)){
       this.likeIcon = "thumb_up_alt"
