@@ -17,6 +17,7 @@ export class JokeItemComponent {
   @Input() joke: Joke = {id: "", joke: ""};
   @Input() id? : string = undefined;
   saveIcon: string = "bookmark_border";
+  likeIcon: string = "thumb_up_off_alt"
 
   constructor(private apiService: ApiService){}
 
@@ -26,11 +27,20 @@ export class JokeItemComponent {
         (resp:any)=> {
           this.joke = {id: resp.id, joke: resp.joke};
 
-          this.setBookmark(); // Do save code so it waits to get joke
+          this.setBookmark(); // Do save/like code so it waits to get joke
+          this.setLike();
       })
     }
     else{
       this.setBookmark();
+      this.setLike();
+    }
+  }
+
+  private setLike(){
+    let likeStorage = JSON.parse(localStorage.getItem("likes")!);
+    if (likeStorage.hasOwnProperty(this.joke.id)){
+      this.likeIcon = "thumb_up_alt"
     }
   }
 

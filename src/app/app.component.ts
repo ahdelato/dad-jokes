@@ -22,6 +22,10 @@ export class AppComponent {
       localStorage.setItem("saves", JSON.stringify({}));
     }
 
+    if (localStorage.getItem("likes") === null){
+      localStorage.setItem("likes", JSON.stringify({}));
+    }
+
     this.router.events.subscribe(() => {
       this.setActiveTab();
     })

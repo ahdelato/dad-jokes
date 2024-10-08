@@ -41,15 +41,26 @@ export class JokePageComponent {
     if (saveStorage.hasOwnProperty(this.route.snapshot.paramMap.get("id"))){
       this.saveStatus = "Saved";
     }
+
+    let likeStorage = JSON.parse(localStorage.getItem("likes")!);
+    if (likeStorage.hasOwnProperty(this.route.snapshot.paramMap.get("id"))){
+      this.likeStatus = "Liked";
+    }
   }
 
   likeSelect(){
+    let likeStorage = JSON.parse(localStorage.getItem("likes")!); // Gather from localStorage again in case of data change
     if (this.likeStatus == "Like"){
       this.likeStatus = "Liked";
+      likeStorage[this.route.snapshot.paramMap.get("id")!] = true;
+      // add like to server
     }
     else{
       this.likeStatus = "Like";
+      delete likeStorage[this.route.snapshot.paramMap.get("id")!];
+      // remove like from server
     }
+    localStorage.setItem("likes", JSON.stringify(likeStorage));
   }
 
   saveSelect(){
