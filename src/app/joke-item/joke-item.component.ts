@@ -42,6 +42,7 @@ export class JokeItemComponent {
     this.apiService.getData("http://54.176.31.97:4000/api/likes/" + this.joke.id).subscribe(
       (resp:any)=> {
         this.numLikes = resp.numLikes;
+        console.log(resp);
       }
     )
     let likeStorage = JSON.parse(localStorage.getItem("likes")!);
