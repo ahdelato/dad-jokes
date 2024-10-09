@@ -17,7 +17,7 @@ export class TopJokesComponent {
   constructor(private apiService: ApiService){}
 
   ngOnInit(){
-    this.apiService.getData("http://54.176.31.97:4000/api/topJokes").subscribe(
+    this.apiService.getData("https://54.176.31.97:4000/api/topJokes").subscribe(
       (resp:any) => {
         this.ids = resp.topJokes;
       }
