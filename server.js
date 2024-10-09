@@ -38,6 +38,7 @@ app.put("/api/addLike/:jokeId", (req, res) => {
     {
         jokeLikes[req.params.jokeId] = 1;
     }
+    res.send("liked");
 })
 
 app.put("/api/removeLike/:jokeId", (req, res) => {
@@ -45,6 +46,7 @@ app.put("/api/removeLike/:jokeId", (req, res) => {
     if (jokeLikes[req.params.jokeId]-- <= 0){
         delete jokeLikes.req.params.jokeId;
     }  
+    res.send("unliked");
 })
 
 const httpsServer = https.createServer( 
