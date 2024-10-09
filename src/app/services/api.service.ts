@@ -16,13 +16,7 @@ export class ApiService {
   }
 
   getData(url: string){ // for server.js (doesnt use headers)
-    return this.httpClient.get(url).pipe(
-      catchError(error => {
-        console.log("ERROR NMADE");
-        console.log(error);
-        return throwError("man made error");
-      })
-    );
+    return this.httpClient.get(url);
   }
 
   putData(url: string){

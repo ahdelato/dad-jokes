@@ -42,10 +42,6 @@ export class JokeItemComponent {
     this.apiService.getData("https://54.176.31.97:4000/api/likes/" + this.joke.id).subscribe(
       (resp:any)=> {
         this.numLikes = resp.numLikes;
-      },
-      (error: any)=> {
-        console.log("TS ERROR COMING THORUHG");
-        this.numLikes = "Use HTTP connection";
       }
     )
     let likeStorage = JSON.parse(localStorage.getItem("likes")!);

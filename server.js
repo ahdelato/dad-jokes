@@ -9,9 +9,8 @@ jokeLikes = {};
 
 app.use(cors());
 
-app.get("/api/acceptCert/:url", (req, res) => {
-    console.log(req.params.url);
-    window.location.href = req.params.url;
+app.get("/api/acceptCert/", (req, res) => {
+    res.redirect("https://ahdelato-dad-jokes.online/");
 });
 
 app.get("/api/likes/:jokeId", (req, res) => {
