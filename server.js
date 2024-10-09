@@ -11,7 +11,7 @@ app.use(cors());
 
 app.get("/api/acceptCert/:url", (req, res) => {
     console.log(req.params.url);
-    res.redirect(req.params.url);
+    window.location.href = req.params.url;
 });
 
 app.get("/api/likes/:jokeId", (req, res) => {
