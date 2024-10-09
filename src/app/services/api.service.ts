@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SearchParams } from '../../types';
+import { catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,11 @@ export class ApiService {
   }
 
   getData(url: string){ // for server.js (doesnt use headers)
-    return this.httpClient.get(url);
+    return this.httpClient.get(url).pipe(
+      catchError(error => {
+        return throwError(error);
+      })
+    );
   }
 
   putData(url: string){
