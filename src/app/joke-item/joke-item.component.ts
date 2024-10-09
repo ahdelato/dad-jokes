@@ -43,6 +43,10 @@ export class JokeItemComponent {
       (resp:any)=> {
         this.numLikes = resp.numLikes;
         console.log(resp);
+
+      (error: any)=> {
+        console.log(error);
+      }
       }
     )
     let likeStorage = JSON.parse(localStorage.getItem("likes")!);
