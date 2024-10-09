@@ -45,7 +45,7 @@ app.put("/api/removeLike/:jokeId", (req, res) => {
     console.log("remove like called");
     if (jokeLikes.hasOwnProperty(req.params.jokeId)){
         if (jokeLikes[req.params.jokeId]-- <= 0){
-            delete jokeLikes.req.params.jokeId;
+            delete jokeLikes[req.params.jokeId];
         }  
     }
     
