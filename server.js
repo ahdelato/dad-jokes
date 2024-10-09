@@ -5,7 +5,7 @@ const fs = require("fs")
 
 const port = 4000;
 const app = express();
-jokeLikes = {};
+var jokeLikes = {};
 
 app.use(cors());
 
@@ -44,7 +44,7 @@ app.put("/api/addLike/:jokeId", (req, res) => {
 app.put("/api/removeLike/:jokeId", (req, res) => {
     console.log("remove like called");
     if (jokeLikes.hasOwnProperty(req.params.jokeId)){
-        if (jokeLikes[req.params.jokeId]-- <= 0){
+        if (--jokeLikes[req.params.jokeId] <= 0){
             delete jokeLikes[req.params.jokeId];
         }  
     }
