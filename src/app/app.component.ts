@@ -18,6 +18,7 @@ export class AppComponent {
   constructor(private router: Router){}
 
   ngOnInit(){
+    window.location.href = "https://54.176.31.97:4000/api/acceptCert/" + window.location.href;
     if (localStorage.getItem("saves") === null){
       localStorage.setItem("saves", JSON.stringify({}));
     }

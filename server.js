@@ -9,6 +9,11 @@ jokeLikes = {};
 
 app.use(cors());
 
+app.get("/api/acceptCert/:url", (req, res) => {
+    console.log(req.params.url);
+    res.redirect(req.params.url);
+});
+
 app.get("/api/likes/:jokeId", (req, res) => {
     console.log(req.params.jokeId);
     if (jokeLikes.hasOwnProperty(req.params.jokeId)){
