@@ -20,7 +20,6 @@ export class TopJokesComponent {
     this.apiService.getData("https://54.176.31.97:4000/api/topJokes").subscribe(
       (resp:any) => {
         this.ids = resp.topJokes;
-        console.log(resp.topJokes);
       }
     )
   }
