@@ -1,8 +1,10 @@
 const express = require('express');
-const app = express();
+const https = require("https") 
 const cors = require('cors');
-const port = 4000;
+const fs = require("fs") 
 
+const port = 4000;
+const app = express();
 jokeLikes = {};
 
 app.use(cors());
@@ -41,6 +43,14 @@ app.put("/api/removeLike/:jokeId", (req, res) => {
     }  
 })
 
-app.listen(port, () => {
+const httpsServer = https.createServer( 
+    { 
+        key: fs.readFileSync("key.pem"), 
+        cert: fs.readFileSync("cert.pem"), 
+    }, 
+    app
+) 
+
+httpsServer.listen(port, () => {
     console.log("Server listening on port " + port);
 });

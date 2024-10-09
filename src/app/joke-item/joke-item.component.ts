@@ -43,10 +43,13 @@ export class JokeItemComponent {
       (resp:any)=> {
         this.numLikes = resp.numLikes;
 
+      
+      },
       (error: any)=> {
-        this.numLikes = "Use HTTP connection"
+        console.log("TS ERROR COMING THORUHG");
+        this.numLikes = "Use HTTP connection";
       }
-      }
+
     )
     let likeStorage = JSON.parse(localStorage.getItem("likes")!);
     if (likeStorage.hasOwnProperty(this.joke.id)){
