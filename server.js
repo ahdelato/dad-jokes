@@ -9,7 +9,7 @@ jokeLikes = {};
 
 app.use(cors());
 
-app.get("/api/acceptCert/", (req, res) => {
+app.get("/api/acceptCert", (req, res) => {
     res.redirect("https://ahdelato-dad-jokes.online/");
 });
 
