@@ -18,7 +18,7 @@ export class JokeItemComponent {
   @Input() id? : string = undefined;
   saveIcon: string = "bookmark_border";
   likeIcon: string = "thumb_up_off_alt";
-  numLikes: number = 0;
+  numLikes: number | string = 0;
 
   constructor(private apiService: ApiService){}
 
@@ -42,10 +42,9 @@ export class JokeItemComponent {
     this.apiService.getData("http://54.176.31.97:4000/api/likes/" + this.joke.id).subscribe(
       (resp:any)=> {
         this.numLikes = resp.numLikes;
-        console.log(resp);
 
       (error: any)=> {
-        console.log(error);
+        this.numLikes = "Use HTTP connection"
       }
       }
     )
