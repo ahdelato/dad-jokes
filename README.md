@@ -9,6 +9,5 @@ In Dad Jokes, you can:
 - Get a random joke.
 - Look through all jokes.
 
-
-KNOWN ISSUE:
-- If like values are bugged and show 0, the page needs to be refreshed.
+# Disclaimer
+Upon first visit, you will be presented with a warning by your browser. This is due to the self signed certificate used for https in a separate api used for like data. Please continue anyway to access the website.

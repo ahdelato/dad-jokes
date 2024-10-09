@@ -38,15 +38,18 @@ app.put("/api/addLike/:jokeId", (req, res) => {
     {
         jokeLikes[req.params.jokeId] = 1;
     }
-    res.send("liked");
+    res.json({liked: true});
 })
 
 app.put("/api/removeLike/:jokeId", (req, res) => {
     console.log("remove like called");
-    if (jokeLikes[req.params.jokeId]-- <= 0){
-        delete jokeLikes.req.params.jokeId;
-    }  
-    res.send("unliked");
+    if (jokeLikes.hasOwnProperty(req.params.jokeId)){
+        if (jokeLikes[req.params.jokeId]-- <= 0){
+            delete jokeLikes.req.params.jokeId;
+        }  
+    }
+    
+    res.json({unliked: true});
 })
 
 const httpsServer = https.createServer( 
